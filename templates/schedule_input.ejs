@@ -1,0 +1,17 @@
+<html>
+<h1>Enter Food For the <%=page_date%></h1>
+<form action="/enter_food/<%=page_date%>" method="post">
+    <div class="form-example">
+        <label for="text">Enter what you ate </label>
+        <input type="text" name="food" id="food" required>
+    </div>
+    <div class="form-example">
+        <label for="text">Enter calories </label>
+        <input type="text" name="calories" id="calories" required>
+    </div>
+    <div class="form-example">
+        <input type="submit" value="Enter!">
+    </div>
+</form>
+
+</html>
