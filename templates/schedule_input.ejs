@@ -1,5 +1,16 @@
-<html>
-<h1>Enter Food For the <%=page_date%></h1>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+<h3>What have you eaten on <%=page_date%>?</h3>
 <form action="/enter_food/<%=page_date%>" method="post">
     <div class="form-example">
         <label for="text">Enter what you ate </label>
@@ -14,4 +25,5 @@
     </div>
 </form>
 
+</body>
 </html>

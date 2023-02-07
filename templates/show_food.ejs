@@ -1,0 +1,45 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+<table>
+    <tr>
+        <td><b>FOOD CONSUMED</b></td>
+        <td><b>FOOD NAME</b></td>
+        <td><b>CALORIES</b></td>
+        <td><b>DATE</b></td>
+        <td><b>DELETE</b></td>
+        <td><b>UPDATE</b></td>
+    </tr>
+    <% for(var i = 0; i < data.length; i++) { %>
+        <tr>
+            <td><%= data[i].food_key %></td>
+            <td><%= data[i].food_name %></td>
+            <td><%= data[i].calories %></td>
+            <td><%= data[i].date_formatted %></td>
+            <td>
+                <form action="/view_food" method="post">
+                    <input type="hidden" name="del" value="<%= data[i].food_key %>">
+                    <button   id="upd_<%= data[i].food_key %>">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="/view_food" method="post">
+                    <input type="hidden" name="upd" value="<%= data[i].food_key %>">
+                    <button   id="upd_<%= data[i].food_key %>">Update</button>
+                </form>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+
+</body>
+</html>
