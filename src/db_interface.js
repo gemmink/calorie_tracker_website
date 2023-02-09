@@ -12,6 +12,17 @@ function input_parsed_food_into_database(food_name, food_calories, food_date) {
     db.run("insert into food_table( food_name,calories,date) " +
         "values ( \'" + food_name.toString() + "\'," + food_calories.toString() + "," + food_date.toString() + ")")
 }
+module.exports.get_food_one_row = function get_one_row(food_id,reply){
+    db.each('select food_key ,food_name,calories,date from food_table where food_key = '
+        + food_id.toString(),(err,row)=>
+        {
+           console.log ('select food_key ,food_name,calories,date from food_table where food_key = '
+            + food_id.toString());
+         console.log(row);
+        }
+    )
+
+};
 
 module.exports.input_food_into_database =
     function (json_food, page_date) {

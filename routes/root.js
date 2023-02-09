@@ -24,6 +24,17 @@ module.exports = async function (fastify, opts) {
         db.delete_food(req.body);
         reply.redirect(req.url);
     })
+    fastify.get('/update_food', (req, reply) => {
+        reply.view("/update_food.ejs");
+    })
+    fastify.get('/update_food/:id', (req, reply) => {
+        db.get_food_one_row(req.params.id);
+       //reply.view("/update_food.ejs");
+    })
+    fastify.post('/update_food', (req, reply) => {
+
+        reply.redirect('/')
+    })
     fastify.get('/view_food/:date', (req, reply) => {
         db.get_food_eaten(reply);
     })

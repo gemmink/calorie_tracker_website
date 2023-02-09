@@ -1,5 +1,4 @@
-
-
+<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,19 +9,14 @@
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-<h3>What have you eaten on <%=page_date%>?</h3>
-<form action="/enter_food/<%=page_date%>" method="post">
-    <div>
-        <label for="text">Enter what you ate </label>
-        <input type="text" name="food" id="food" required>
-    </div>
-    <div class>
+<form action="/update_food" method="post">
+    <h3>Change Food Calories</h3>
+    <div class="form">
+        <input type="hidden" name="key" value="<%=food_key %>">
         <label for="text">Enter calories </label>
         <input type="text" name="calories" id="calories" required>
     </div>
-    <div>
-        <input type="submit" value="Enter!">
-    </div>
+    <input type="submit"></form>
 </form>
 
 </body>
