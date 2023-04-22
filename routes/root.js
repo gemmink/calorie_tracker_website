@@ -3,7 +3,7 @@ const db = require("../src/db_interface");
 const utility = require("../src/utility_functions");
 
 module.exports = async function (fastify, opts) {
-
+    //this is the landing page, I
     fastify.get('/', function (req, reply) {
             reply.view("/landing_page.ejs", {page_date: utility.get_str_today_date()});
         }
@@ -32,7 +32,6 @@ module.exports = async function (fastify, opts) {
        //reply.view("/update_food.ejs");
     })
     fastify.post('/update_food', (req, reply) => {
-
         reply.redirect('/')
     })
     fastify.get('/view_food/:date', (req, reply) => {

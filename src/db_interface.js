@@ -16,9 +16,7 @@ module.exports.get_food_one_row = function get_one_row(food_id,reply){
     db.each('select food_key ,food_name,calories,date from food_table where food_key = '
         + food_id.toString(),(err,row)=>
         {
-           console.log ('select food_key ,food_name,calories,date from food_table where food_key = '
-            + food_id.toString());
-         console.log(row);
+           console.log ("error");
         }
     )
 
@@ -37,6 +35,8 @@ module.exports.delete_food =
 console.log(json_food);
         db.run("DELETE FROM food_table WHERE food_key =" +  json_food.del.toString());
     };
+
+
 module.exports.get_food_eaten = function (reply) {
     const ts = db.all('select food_key ,food_name,calories,date from food_table', (err, rows) => {
         for(let i = 0;i<rows.length;i++)
